@@ -30,10 +30,26 @@ def student_details(request, pk):
     if request.method == 'GET':
         serializers = StudentSerializers(student)
         return Response(serializers.data)
+    
+    elif request.method == 'PUT':
+        serializers = StudentSerializers(student, request.data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data)
+        return Response(serializers.errors,status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
         student.delete()
         return Response(status = status.HTTP_204_NO_CONTENT)
+
+    elif request.method == 'PATCH':
+        serializers = StudentSerializers(student, data=request.data, partial=True)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data)
+        return Response(serializers.errors,status=status.HTTP_400_BAD_REQUEST)
+
+
         
         
 
