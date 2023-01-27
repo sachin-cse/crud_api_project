@@ -7,6 +7,11 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 
 # Create your views here.
+
+def index(request):
+    return render(request, 'index.html')
+
+    
 @api_view(['GET', 'POST'])
 def student_list(request):
     if request.method == 'GET':

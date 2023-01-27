@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Completed</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tr>
+          <td>Christian Woods</td>
+          <td>2/27/2018</td>
+          <td>2 days ago</td>
+          <td>$450.00</td>
+          <td><div class="table__button-group"><a href="">View</a><a href="">Edit</a><a href="">Delete</a></div></td>
+        </tr>
+      </table>
+      </section>
+</body>
+</html>
